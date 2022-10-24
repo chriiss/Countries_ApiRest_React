@@ -1,0 +1,261 @@
+@use "./variables.scss" as var;
+
+@mixin themesStyle {
+    .dark {
+        background-color: var.$secondary_color;
+        color: var.$primary_color;
+        transition: all 0.5s ease-in-out;
+
+        .countries {
+            &_list {
+                &_card {
+                    background-color: var.$third-color;
+                }
+            }
+        }
+        .link {
+            background-color: var.$secondary_color;
+            color: var.$primary_color;
+        }
+
+        input[type="search"] {
+            color: var.$primary_color;
+        }
+
+        .suggest {
+            &_item {
+                &:hover {
+                    color: var.$secondary_color;
+                }
+            }
+        }
+
+        select {
+            color: var.$primary_color;
+            
+            option {
+                background: var.$third-color;
+            }
+        }
+    }
+    .light {
+        background-color: var.$primary_color;
+        color: var.$secondary_color;
+        transition: all 0.5s ease-in-out;
+        
+        .link {
+            background-color: var.$primary_color;
+            color: var.$secondary_color;
+        }
+    }
+}
+
+@mixin navStyle {
+    .nav {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+        ul {
+            display: flex;
+            li:nth-child(1) {
+                font-size: 20px;
+                font-weight: bold;
+                flex: .9;
+
+                @media(max-width: var.$breakpoint_tablet) {
+                    flex: .8
+                }
+            }
+            li:nth-child(2) {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@mixin marginStyle {
+    margin-top: 100px;
+}
+
+@mixin inputSelectStyle {
+    border: 1px solid rgb(234, 233, 233);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+    padding: 1rem;
+}
+
+@mixin searchBoxCountriesFilterStyle {
+    .componentsStyle {
+        display: flex;
+        @include marginStyle;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        @media(max-width: var.$breakpoint_tablet) {
+            flex-direction: column;
+            gap: 3rem;
+            padding-left: calc(2rem/2);
+            padding-right: calc(2rem/2);
+        }
+    }
+}
+
+@mixin searchBoxStyle {
+    .searchBox {
+        @include inputSelectStyle;
+        width: 75%;
+
+        @media(max-width: var.$breakpoint_tablet) {
+            width: 90%;
+        }
+        input[type="search"] {
+            border: none;
+            vertical-align: super;
+            background: none;
+            outline: none;
+            width: 92%;
+            float: right;
+            margin-top: .25rem;
+            @media(max-width: var.$breakpoint_mobile) {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@mixin countriesFilterStyle {
+    .filter {
+        width: 20%;
+        @media(max-width: var.$breakpoint_tablet) {
+            width: 95%;
+        }
+        select {
+            @include inputSelectStyle;
+            background: none;
+            outline: none;
+            width: 100%;
+        }    
+    }
+}
+
+@mixin paddingStyle {
+    padding-top: 100px;
+    padding-bottom: calc(100px/2);
+}
+
+@mixin countriesStyle {
+    .countries {
+        @include paddingStyle;
+
+        @media(max-width: var.$breakpoint_mobile) {
+            padding-top: calc(100px/2);
+        }
+
+        &_list {
+            margin: auto;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            
+            &_card {
+                width: 90%;
+                overflow: hidden;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+                border-radius: 10px;
+                transition: all .75s ease-in-out;
+                &:hover {
+                    transform: scale(1.04);
+                    cursor: pointer;
+                }
+                img {
+                    width: 100%;
+                    height: 20vh;
+                    margin-bottom: 1rem; 
+                    object-fit: cover;
+                    
+
+                    @media(max-width: 575px) {
+                        height: auto;
+                    }
+                }
+                div {
+                    h2 {
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                div {
+                    line-height: 2rem;
+                }
+                div:last-child {
+                    float: right;
+                }
+            }
+        }
+    }
+}
+
+@mixin suggestStyle {
+    .suggest {
+
+        &_item {
+            line-height: 2rem;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+
+            &:hover {
+                background-color: rgb(206, 202, 202);
+            }
+        }
+        span {
+            vertical-align: super;
+        }
+    }
+}
+
+@mixin detailsCountriesStyle {
+    .back {
+        margin: 50px 2.5%;
+    }
+    .detailContainer {
+        display: flex;
+        @include paddingStyle;
+        gap: 2rem;
+        width: 95%;
+
+        @media(max-width: var.$breakpoint_tablet) {
+           flex-direction: column;
+        }
+
+        &_bloc {
+            width: 100%;
+            img {
+                width: 100%;
+                @media(max-width: var.$breakpoint_tablet) {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        &_bloc:nth-child(2) {
+            .data_bloc {
+                display: flex;
+                gap: 2rem;
+                div {
+                    width: 100%;
+                }
+                @media(max-width: var.$breakpoint_tablet) {
+                    flex-direction: column;
+                    gap: 0rem;
+                    line-height: 1.5rem;
+                
+                }
+            }
+            .bloc_link {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+        }
+    }
+}

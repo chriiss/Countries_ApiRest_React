@@ -1,0 +1,35 @@
+@use "./mixins.scss" as mixin;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  font-family: 'Nunito Sans', sans-serif;
+  max-width: 1440px;
+  @include mixin.themesStyle;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: clamp(1.3rem, 2vw, 4rem);
+}
+
+.bold {
+  font-weight: 700;
+}
+.link {
+  color: #212121;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+  text-align: center;
+  padding: 2px;
+}
+@include mixin.navStyle;
+@include mixin.searchBoxCountriesFilterStyle;
+@include mixin.searchBoxStyle;
+@include mixin.suggestStyle;
+@include mixin.countriesFilterStyle;
+@include mixin.countriesStyle;
+@include mixin.detailsCountriesStyle;

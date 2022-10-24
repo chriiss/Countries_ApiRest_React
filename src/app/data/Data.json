@@ -1,0 +1,44 @@
+{
+    "navbarComponent": {
+        "title": "Where in the World?"
+    },
+    "countriesComponent": {
+        "card": {
+            "population": "Population",
+            "region": "Region",
+            "capital": "Capital",
+            "more": "Read more"
+        }
+    },
+    "detailsComponent": {
+        "nativeName": "Native Name",
+        "population": "Population",
+        "region": "Region",
+        "subRegion": "Sub Region",
+        "capital": "Capital",
+        "topLevelDomain": "Top Level Domain",
+        "currencies": "Currencies",
+        "languages": "Languages",
+        "timeZone": "Timezone",
+        "borderCountries": "Border Countries"
+    },
+    "filterComponent": {
+        "regionFilter": [
+            {
+                "name": "Africa"
+            },
+            {
+                "name": "Americas"
+            },
+            {
+                "name": "Asia"
+            },
+            {
+                "name": "Europe"
+            },
+            {
+                "name": "Oceania"
+            }
+        ]
+    }
+}
